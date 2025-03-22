@@ -21,9 +21,55 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-IN-U33">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downforce F1 news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Rq-lrM">
+                                        <rect key="frame" x="90.000000000000014" y="50" width="199.33333333333337" height="60"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1712108638927835" green="0.041436153030314629" blue="0.03724324003861202" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="erZ-Rq-lrM" firstAttribute="top" secondItem="qL9-IN-U33" secondAttribute="top" constant="50" id="FSr-xw-5jW"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="erZ-Rq-lrM" secondAttribute="trailing" constant="20" symbolic="YES" id="Vwa-Pn-uf2"/>
+                                    <constraint firstItem="erZ-Rq-lrM" firstAttribute="leading" secondItem="qL9-IN-U33" secondAttribute="leading" constant="90" id="ZZn-gf-GNd"/>
+                                    <constraint firstAttribute="bottom" secondItem="erZ-Rq-lrM" secondAttribute="bottom" id="oMl-gx-SCK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nb-AK-nny">
+                                <rect key="frame" x="0.0" y="109" width="393" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chinese GP Starts in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vm4-sU-IMF">
+                                        <rect key="frame" x="22" y="8" width="350" height="21"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40393443943298968" green="0.18171234735615024" blue="0.114444220185832" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="vm4-sU-IMF" firstAttribute="top" secondItem="3nb-AK-nny" secondAttribute="top" constant="8" id="8PZ-Gf-2Yl"/>
+                                    <constraint firstItem="vm4-sU-IMF" firstAttribute="leading" secondItem="3nb-AK-nny" secondAttribute="leading" constant="22" id="9xa-6I-Xiu"/>
+                                    <constraint firstAttribute="trailing" secondItem="vm4-sU-IMF" secondAttribute="trailing" constant="21" id="Dsw-sf-fl2"/>
+                                    <constraint firstAttribute="bottom" secondItem="vm4-sU-IMF" secondAttribute="bottom" constant="44" id="Tsq-Hd-8kX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nAH-si-Wsg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qL9-IN-U33" firstAttribute="leading" secondItem="nAH-si-Wsg" secondAttribute="leading" id="Mfa-5J-2sY"/>
+                            <constraint firstItem="3nb-AK-nny" firstAttribute="trailing" secondItem="nAH-si-Wsg" secondAttribute="trailing" id="U5e-5K-Lkn"/>
+                            <constraint firstItem="qL9-IN-U33" firstAttribute="trailing" secondItem="nAH-si-Wsg" secondAttribute="trailing" id="beQ-p2-a4i"/>
+                            <constraint firstItem="3nb-AK-nny" firstAttribute="leading" secondItem="nAH-si-Wsg" secondAttribute="leading" id="d1T-DY-dMg"/>
+                            <constraint firstItem="nAH-si-Wsg" firstAttribute="bottom" secondItem="qL9-IN-U33" secondAttribute="bottom" constant="708" id="nBv-Bs-0Ob"/>
+                            <constraint firstItem="nAH-si-Wsg" firstAttribute="bottom" secondItem="3nb-AK-nny" secondAttribute="bottom" constant="636" id="nKe-nh-5ay"/>
+                            <constraint firstItem="3nb-AK-nny" firstAttribute="top" secondItem="nAH-si-Wsg" secondAttribute="top" constant="50" id="rug-SM-iYu"/>
+                            <constraint firstItem="qL9-IN-U33" firstAttribute="top" secondItem="UYg-Qg-efs" secondAttribute="top" id="tGv-5R-UYD"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mainFeedTable" destination="wAx-2o-PDc" id="47U-Ex-e7J"/>
@@ -37,6 +83,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
