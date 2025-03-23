@@ -10,19 +10,16 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var mainFeedTable: UITableView!
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     var newsArray: [MainNewsModel] = []
     var apiManager = APIManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainFeedTable.delegate = self
-        mainFeedTable.dataSource = self
-        
+        setUpTableView()
+        setUpActivityIndicatorView()
         apiManager.delegate = self
-        
-        mainFeedTable.register(UINib(nibName: "MainFeedCustomTableViewCell", bundle: nil), forCellReuseIdentifier: "MainFeedCustomCell")
-        
         apiManager.fetchMainStreamCNNNews()
         
     }
@@ -32,6 +29,26 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func setUpTableView() {
+        mainFeedTable.delegate = self
+        mainFeedTable.dataSource = self
+        mainFeedTable.register(UINib(nibName: "MainFeedCustomTableViewCell", bundle: nil), forCellReuseIdentifier: "MainFeedCustomCell")
+        mainFeedTable.isHidden = true
+    }
+    
+    func setUpActivityIndicatorView() {
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        activityIndicator.startAnimating()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (newsArray.count > 0 && newsArray[0].articles != nil) {
             return newsArray[0].articles?.count ?? 1
@@ -63,6 +80,8 @@ extension MainViewController: MainNewsFetcherDelegate {
             
             if let articles = mainNewsModel.articles, !articles.isEmpty {
                 self.newsArray.append(mainNewsModel)
+                self.activityIndicator.stopAnimating()
+                self.mainFeedTable.isHidden = false
                 self.mainFeedTable.reloadData()
             }
         }
