@@ -13,14 +13,14 @@ struct MainNewsModel: Codable {
 }
 
 struct MainNews: Codable {
-    let source: Source
-    let title: String
-    let description: String
-    let url: String
-    let urlToImage: String
+    let source: Source?
+    let title: String?
+    let description: String?
+    let url: String?
+    let urlToImage: String?
 }
 
 struct Source: Codable {
-    let id: String
-    let name: String
+    let id: String?
+    let name: String?
 }
