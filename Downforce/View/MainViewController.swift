@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     var newsArray: [MainNewsModel] = []
     var apiManager = APIManager()
     
+    private let newsImageViewModel = NewsImageViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,9 +66,21 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.newsTitle.text = "Loading..."
         } else {
             cell.newsTitle.text = newsArray[0].articles?[indexPath.row].title
+            let temp = newsArray[0].articles?[indexPath.row].urlToImage
+            if let url = URL(string: temp!) {
+                cell.newsImage.setImage(from: url, viewModel: self.newsImageViewModel)
+            }
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 330.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

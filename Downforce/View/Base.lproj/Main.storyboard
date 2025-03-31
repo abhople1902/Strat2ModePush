@@ -24,11 +24,11 @@
                                     <constraint firstAttribute="height" constant="567" id="lU9-qA-om9"/>
                                 </constraints>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-IN-U33">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-IN-U33" userLabel="HeadingView">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downforce F1 news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Rq-lrM">
-                                        <rect key="frame" x="55" y="50" width="265.66666666666669" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downforce news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Rq-lrM">
+                                        <rect key="frame" x="79.999999999999986" y="50" width="224.66666666666663" height="60"/>
                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,26 +37,8 @@
                                 <constraints>
                                     <constraint firstItem="erZ-Rq-lrM" firstAttribute="top" secondItem="qL9-IN-U33" secondAttribute="top" constant="50" id="FSr-xw-5jW"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="erZ-Rq-lrM" secondAttribute="trailing" constant="20" symbolic="YES" id="Vwa-Pn-uf2"/>
-                                    <constraint firstItem="erZ-Rq-lrM" firstAttribute="leading" secondItem="qL9-IN-U33" secondAttribute="leading" constant="55" id="ZZn-gf-GNd"/>
+                                    <constraint firstItem="erZ-Rq-lrM" firstAttribute="leading" secondItem="qL9-IN-U33" secondAttribute="leading" constant="80" id="ZZn-gf-GNd"/>
                                     <constraint firstAttribute="bottom" secondItem="erZ-Rq-lrM" secondAttribute="bottom" id="oMl-gx-SCK"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nb-AK-nny" userLabel="CountdownView">
-                                <rect key="frame" x="0.0" y="109" width="393" height="73"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chinese GP Starts in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vm4-sU-IMF">
-                                        <rect key="frame" x="22" y="8" width="350" height="21"/>
-                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.40393443943298968" green="0.18171234735615024" blue="0.114444220185832" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="vm4-sU-IMF" firstAttribute="top" secondItem="3nb-AK-nny" secondAttribute="top" constant="8" id="8PZ-Gf-2Yl"/>
-                                    <constraint firstItem="vm4-sU-IMF" firstAttribute="leading" secondItem="3nb-AK-nny" secondAttribute="leading" constant="22" id="9xa-6I-Xiu"/>
-                                    <constraint firstAttribute="trailing" secondItem="vm4-sU-IMF" secondAttribute="trailing" constant="21" id="Dsw-sf-fl2"/>
-                                    <constraint firstAttribute="bottom" secondItem="vm4-sU-IMF" secondAttribute="bottom" constant="44" id="Tsq-Hd-8kX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -65,24 +47,21 @@
                         <constraints>
                             <constraint firstItem="vcK-Dy-nVv" firstAttribute="trailing" secondItem="nAH-si-Wsg" secondAttribute="trailing" id="91b-at-vhX"/>
                             <constraint firstItem="qL9-IN-U33" firstAttribute="leading" secondItem="nAH-si-Wsg" secondAttribute="leading" id="Mfa-5J-2sY"/>
-                            <constraint firstItem="3nb-AK-nny" firstAttribute="trailing" secondItem="nAH-si-Wsg" secondAttribute="trailing" id="U5e-5K-Lkn"/>
                             <constraint firstItem="qL9-IN-U33" firstAttribute="trailing" secondItem="nAH-si-Wsg" secondAttribute="trailing" id="beQ-p2-a4i"/>
                             <constraint firstItem="nAH-si-Wsg" firstAttribute="bottom" secondItem="vcK-Dy-nVv" secondAttribute="bottom" constant="70" id="c9j-mr-riL"/>
-                            <constraint firstItem="3nb-AK-nny" firstAttribute="leading" secondItem="nAH-si-Wsg" secondAttribute="leading" id="d1T-DY-dMg"/>
                             <constraint firstItem="nAH-si-Wsg" firstAttribute="bottom" secondItem="qL9-IN-U33" secondAttribute="bottom" constant="708" id="nBv-Bs-0Ob"/>
-                            <constraint firstItem="nAH-si-Wsg" firstAttribute="bottom" secondItem="3nb-AK-nny" secondAttribute="bottom" constant="636" id="nKe-nh-5ay"/>
-                            <constraint firstItem="3nb-AK-nny" firstAttribute="top" secondItem="nAH-si-Wsg" secondAttribute="top" constant="50" id="rug-SM-iYu"/>
                             <constraint firstItem="qL9-IN-U33" firstAttribute="top" secondItem="UYg-Qg-efs" secondAttribute="top" id="tGv-5R-UYD"/>
                             <constraint firstItem="vcK-Dy-nVv" firstAttribute="leading" secondItem="nAH-si-Wsg" secondAttribute="leading" id="xQa-ha-SMg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MOv-xv-hFe"/>
                     <connections>
                         <outlet property="mainFeedTable" destination="vcK-Dy-nVv" id="bBn-5y-iY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BML-6o-j17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475.57251908396944" y="-53.521126760563384"/>
+            <point key="canvasLocation" x="1402.2900763358778" y="-53.521126760563384"/>
         </scene>
     </scenes>
     <resources>
