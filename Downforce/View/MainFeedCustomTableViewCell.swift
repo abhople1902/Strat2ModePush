@@ -9,6 +9,7 @@ import UIKit
 
 class MainFeedCustomTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var publishedDate: UILabel!
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     
