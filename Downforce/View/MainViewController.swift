@@ -66,9 +66,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.newsTitle.text = "Loading..."
         } else {
             cell.newsTitle.text = newsArray[0].articles?[indexPath.row].title
+            cell.publishedDate.text = formatPublishedDate(newsArray[0].articles?[indexPath.row].publishedAt ?? "")
             let temp = newsArray[0].articles?[indexPath.row].urlToImage
             if let url = URL(string: temp!) {
-                cell.newsImage.setImage(from: url, viewModel: self.newsImageViewModel)
+                cell.newsImage.setImage(from: url, placeholder: UIImage(named: "loadingImage"), viewModel: self.newsImageViewModel)
             }
         }
         
@@ -76,11 +77,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 330.0
+        return 320.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func formatPublishedDate(_ datePublished: String) -> String? {
+        guard datePublished.count >= 10 else {
+            return nil
+        }
+        let endIndexPoint = datePublished.index(datePublished.startIndex, offsetBy: 9)
+        return String(datePublished[datePublished.startIndex...endIndexPoint])
     }
     
 }

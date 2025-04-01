@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JBd-ri-UKj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CaP-a7-eeA">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -8,10 +8,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="oFN-xh-gaU">
+            <objects>
+                <viewController id="CaP-a7-eeA" customClass="IntroViewController" customModule="Downforce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TrR-o5-Nvr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IntroImage" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-6S-R6n">
+                                <rect key="frame" x="0.0" y="-11" width="393" height="880"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strat Two Sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA5-2J-3mo" userLabel="Strat Two Label">
+                                <rect key="frame" x="0.0" y="393" width="393" height="101"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think sports, think strat two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yv-sz-55l">
+                                <rect key="frame" x="0.0" y="502" width="393" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Im6-by-ghM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cA5-2J-3mo" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" id="Bqg-AG-vAx"/>
+                            <constraint firstItem="Im6-by-ghM" firstAttribute="bottom" secondItem="0Yv-sz-55l" secondAttribute="bottom" constant="284" id="Ly0-Om-Dnf"/>
+                            <constraint firstItem="Im6-by-ghM" firstAttribute="bottom" secondItem="cA5-2J-3mo" secondAttribute="bottom" constant="324" id="Qb5-Br-rGh"/>
+                            <constraint firstItem="cA5-2J-3mo" firstAttribute="top" secondItem="Im6-by-ghM" secondAttribute="top" constant="334" id="ZYQ-f0-PWl"/>
+                            <constraint firstItem="0Yv-sz-55l" firstAttribute="trailing" secondItem="Im6-by-ghM" secondAttribute="trailing" id="aVz-o6-jsG"/>
+                            <constraint firstItem="0Yv-sz-55l" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" id="heP-vW-bnz"/>
+                            <constraint firstItem="cA5-2J-3mo" firstAttribute="trailing" secondItem="Im6-by-ghM" secondAttribute="trailing" id="ibs-I1-89p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stratTwoNewsLabel" destination="cA5-2J-3mo" id="ETe-j3-0vc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jzk-aW-Z48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748.85496183206101" y="-68.309859154929583"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="OBz-Vw-RnK">
             <objects>
-                <viewController id="JBd-ri-UKj" customClass="MainViewController" customModule="Downforce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="JBd-ri-UKj" customClass="MainViewController" customModule="Downforce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UYg-Qg-efs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,15 +65,14 @@
                                 <rect key="frame" x="0.0" y="181" width="393" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="393" id="BgB-Fu-bA0"/>
                                     <constraint firstAttribute="height" constant="567" id="lU9-qA-om9"/>
                                 </constraints>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-IN-U33" userLabel="HeadingView">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downforce news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Rq-lrM">
-                                        <rect key="frame" x="79.999999999999986" y="50" width="224.66666666666663" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strat two sports news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Rq-lrM">
+                                        <rect key="frame" x="47" y="50" width="298" height="60"/>
                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,7 +81,7 @@
                                 <constraints>
                                     <constraint firstItem="erZ-Rq-lrM" firstAttribute="top" secondItem="qL9-IN-U33" secondAttribute="top" constant="50" id="FSr-xw-5jW"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="erZ-Rq-lrM" secondAttribute="trailing" constant="20" symbolic="YES" id="Vwa-Pn-uf2"/>
-                                    <constraint firstItem="erZ-Rq-lrM" firstAttribute="leading" secondItem="qL9-IN-U33" secondAttribute="leading" constant="80" id="ZZn-gf-GNd"/>
+                                    <constraint firstItem="erZ-Rq-lrM" firstAttribute="leading" secondItem="qL9-IN-U33" secondAttribute="leading" constant="47" id="ZZn-gf-GNd"/>
                                     <constraint firstAttribute="bottom" secondItem="erZ-Rq-lrM" secondAttribute="bottom" id="oMl-gx-SCK"/>
                                 </constraints>
                             </view>
@@ -54,17 +98,17 @@
                             <constraint firstItem="vcK-Dy-nVv" firstAttribute="leading" secondItem="nAH-si-Wsg" secondAttribute="leading" id="xQa-ha-SMg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MOv-xv-hFe"/>
                     <connections>
                         <outlet property="mainFeedTable" destination="vcK-Dy-nVv" id="bBn-5y-iY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BML-6o-j17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402.2900763358778" y="-53.521126760563384"/>
+            <point key="canvasLocation" x="1665" y="-68"/>
         </scene>
     </scenes>
     <resources>
+        <image name="IntroImage" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
