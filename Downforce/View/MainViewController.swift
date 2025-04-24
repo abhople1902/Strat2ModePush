@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
         setUpTableView()
         setUpActivityIndicatorView()
         apiManager.delegate = self
-        apiManager.fetchMainStreamCNNNews()
+        apiManager.fetchMainStreamBBCSport()
         
     }
 
@@ -67,6 +67,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.newsTitle.text = newsArray[0].articles?[indexPath.row].title
             cell.publishedDate.text = formatPublishedDate(newsArray[0].articles?[indexPath.row].publishedAt ?? "")
+            cell.url = newsArray[0].articles?[indexPath.row].url ?? ""
             let temp = newsArray[0].articles?[indexPath.row].urlToImage
             if let url = URL(string: temp!) {
                 cell.newsImage.setImage(from: url, placeholder: UIImage(named: "loadingImage"), viewModel: self.newsImageViewModel)
@@ -81,6 +82,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "This will open in web view", message: "Are you sure to go ahead?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Go ahead", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "WebViewSegue", sender: indexPath)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -94,7 +105,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
+//MARK: - dispatch queue
 extension MainViewController: MainNewsFetcherDelegate {
     
     func didFetchMainNews(_ apiManager: APIManager, mainNewsModel: MainNewsModel) {
@@ -112,6 +123,28 @@ extension MainViewController: MainNewsFetcherDelegate {
     
     func didFailWithError(error: any Error) {
         print(error)
+    }
+    
+}
+
+
+//MARK: - segue preparation
+extension MainViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WebViewSegue" {
+            let vc = segue.destination as! WebViewController
+            if let indexpath = sender as? IndexPath {
+                vc.url = newsArray[0].articles?[indexpath.row].url ?? ""
+            } else {
+                print("Sender was not an IndexPath")
+            }
+//            if let selectedIndexPath = mainFeedTable.indexPathForSelectedRow {
+//                print("Section:::: \(selectedIndexPath.section)")
+//                vc.url
+//                = newsArray[0].articles?[selectedIndexPath.row].url ?? ""
+//            }
+        }
     }
     
 }
