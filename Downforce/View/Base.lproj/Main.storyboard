@@ -100,11 +100,28 @@
                     </view>
                     <connections>
                         <outlet property="mainFeedTable" destination="vcK-Dy-nVv" id="bBn-5y-iY6"/>
+                        <segue destination="Th0-UI-v2C" kind="show" identifier="WebViewSegue" id="3Tr-rt-KPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BML-6o-j17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1665" y="-68"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ftB-7A-6Ms">
+            <objects>
+                <viewController id="Th0-UI-v2C" customClass="WebViewController" customModule="Downforce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s3U-ZY-0Hu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3ZY-cz-40F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hSN-F0-F1U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQb-nU-TB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2599" y="-68"/>
         </scene>
     </scenes>
     <resources>

@@ -18,7 +18,7 @@ struct APIManager {
     
     let mainNewsUrl = "https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=8acdf1145d14476091edab5f5f8a5cd7"
     
-    func fetchMainStreamCNNNews() {
+    func fetchMainStreamBBCSport() {
         fetchNews(with: mainNewsUrl)
     }
     
