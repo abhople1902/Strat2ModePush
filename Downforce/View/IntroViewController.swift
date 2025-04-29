@@ -31,21 +31,10 @@ class IntroViewController: UIViewController {
               let window = scene.windows.first else { return }
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
-            window.rootViewController = mainVC
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavController") as? UINavigationController {
+            window.rootViewController = authVC
             window.makeKeyAndVisible()
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
