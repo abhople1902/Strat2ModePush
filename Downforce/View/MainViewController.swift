@@ -26,6 +26,10 @@ class MainViewController: UIViewController {
         apiManager.fetchMainStreamBBCSport()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.hidesBackButton = true
+    }
 
 }
 
@@ -85,9 +89,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "This will open in web view", message: "Are you sure to go ahead?", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Go ahead", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Go ahead", style: .default) { _ in
             self.performSegue(withIdentifier: "WebViewSegue", sender: indexPath)
-        }))
+        })
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         

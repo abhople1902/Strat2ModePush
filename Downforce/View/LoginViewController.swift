@@ -71,6 +71,9 @@ class LoginViewController: UIViewController {
               guard let strongSelf = self else { return }
                 
                 if let error = error {
+                    let alert = UIAlertController(title: "Unable to Login", message: "Youe email or password is incorrect", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    strongSelf.present(alert, animated: true)
                     print("Failed to login: \(error.localizedDescription)")
                     return
                 }
