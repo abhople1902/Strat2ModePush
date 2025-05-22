@@ -27,7 +27,7 @@ class SignupViewController: UIViewController {
                     print("Error creating user: \(error)")
                     return
                 }
-                print("User created!")
+                print("User created in firebase!")
                 self.performSegue(withIdentifier: "SignupSuccess", sender: self)
             }
         }
