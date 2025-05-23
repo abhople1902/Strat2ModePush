@@ -4,7 +4,7 @@ set -e
 
 echo "Injecting GoogleService-Info.plist...."
 
-echo "CI_WORKSPACE = $CI_WORKSPACE"
+echo "Current working directory = $PWD"
 
 # Check if variable is set
 if [ -z "$GOOGLE_SERVICE_INFO_PLIST" ]; then
@@ -13,15 +13,15 @@ if [ -z "$GOOGLE_SERVICE_INFO_PLIST" ]; then
 fi
 
 # Ensure directory exists
-mkdir -p "$CI_WORKSPACE/Downforce"
+mkdir -p "$PWD/Downforce"
 
 echo "Before injection:"
-ls -l "$CI_WORKSPACE/Downforce"
+ls -l "$PWD/Downforce"
 
 # Decode and write plist
-echo "$GOOGLE_SERVICE_INFO_PLIST" | base64 --decode > "$CI_WORKSPACE/Downforce/GoogleService-Info.plist"
+echo "$GOOGLE_SERVICE_INFO_PLIST" | base64 --decode > "$PWD/Downforce/GoogleService-Info.plist"
 
 echo "After injection:"
-ls -l "$CI_WORKSPACE/Downforce"
+ls -l "$PWD/Downforce"
 
 echo "GoogleService-Info.plist injected"
