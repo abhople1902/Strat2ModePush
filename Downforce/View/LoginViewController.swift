@@ -78,11 +78,30 @@ class LoginViewController: UIViewController {
                     return
                 }
                 print("Logged in user: \(String(describing: authResult?.user.email))")
-                strongSelf.performSegue(withIdentifier: "LoginSuccess", sender: self)
+                if let email = authResult?.user.email {
+                    UserDefaults.standard.set(email, forKey: "loggedInEmail")
+                }
+                strongSelf.navigateToNextScreenOnLogin()
+//                strongSelf.performSegue(withIdentifier: "LoginSuccess", sender: self)
             }
         }
         
     }
+    
+    
+    
+    func navigateToNextScreenOnLogin() {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = scene.windows.first else { return }
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeNavController") as? UINavigationController {
+            window.rootViewController = authVC
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([

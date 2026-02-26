@@ -22,7 +22,12 @@ class IntroViewController: UIViewController {
             self.stratTwoNewsLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             self.stratTwoNewsLabel.alpha = 1
         }) { _ in
-            self.navigateToNextScreen()
+            if let _ = UserDefaults.standard.string(forKey: "loggedInEmail") {
+                self.navigateToHomeDirectly()
+                return
+            } else {
+                self.navigateToNextScreen()
+            }
         }
     }
     
@@ -32,6 +37,16 @@ class IntroViewController: UIViewController {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavController") as? UINavigationController {
+            window.rootViewController = authVC
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    private func navigateToHomeDirectly() {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = scene.windows.first else { return }
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeNavController") as? UINavigationController {
             window.rootViewController = authVC
             window.makeKeyAndVisible()
         }

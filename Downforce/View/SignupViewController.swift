@@ -20,16 +20,34 @@ class SignupViewController: UIViewController {
 
     }
     
+    
+    func navigateToNextScreenOnLogin() {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = scene.windows.first else { return }
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeNavController") as? UINavigationController {
+            window.rootViewController = authVC
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    
+    
     @IBAction func registerButton(_ sender: UIButton) {
         if let emailEntered = mailInputOutlet.text, let passEntered = passwordInputOutlet.text {
-            Auth.auth().createUser(withEmail: emailEntered, password: passEntered) { authResult, error in
+            Auth.auth().createUser(withEmail: emailEntered, password: passEntered) { [weak self] authResult, error in
                 
+                guard let self = self else { return }
                 if let error = error {
                     print("Error creating user: \(error)")
                     return
                 }
                 print("User created in firebase!")
-                self.performSegue(withIdentifier: "SignupSuccess", sender: self)
+                if let email = authResult?.user.email {
+                    UserDefaults.standard.set(email, forKey: "loggedInEmail")
+                }
+                self.navigateToNextScreenOnLogin()
             }
             guard let email = self.mailInputOutlet.text else { return }
             guard let pass = self.passwordInputOutlet.text else { return }
@@ -50,21 +68,22 @@ class SignupViewController: UIViewController {
                 print("Failed to encode body: \(error)")
                 return
             }
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    print("Failed to register user in MongoDB: \(error)")
-                    return
-                }
-                if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 201 {
-                    print("Unexpected status code from backend: \(httpResponse.statusCode)")
-                    return
-                }
-                print("Successfully registered user in MongoDB.")
-                
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "SignupSuccess", sender: self)
-                }
-            }.resume()
+//            URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+//                guard let self = self else { return }
+//                if let error = error {
+//                    print("Failed to register user in MongoDB: \(error)")
+//                    return
+//                }
+//                if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 201 {
+//                    print("Unexpected status code from backend: \(httpResponse.statusCode)")
+//                    return
+//                }
+//                print("Successfully registered user in MongoDB.")
+//                
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.navigateToNextScreenOnLogin()
+//                }
+//            }.resume()
         }
     }
     

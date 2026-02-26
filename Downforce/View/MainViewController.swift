@@ -20,6 +20,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         
+        let logout = UIBarButtonItem(
+            image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"),
+            style: .plain,
+            target: self,
+            action: #selector(logoutTapped)
+        )
+        navigationItem.rightBarButtonItem = logout
+        
         setUpTableView()
         setUpActivityIndicatorView()
         apiManager.delegate = self
@@ -34,7 +42,7 @@ class MainViewController: UIViewController {
 }
 
 
-
+//MARK: - Table view delegate methods
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func setUpTableView() {
@@ -110,7 +118,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-//MARK: - dispatch queue
+//MARK: - dispatch queue for news
 extension MainViewController: MainNewsFetcherDelegate {
     
     func didFetchMainNews(_ apiManager: APIManager, mainNewsModel: MainNewsModel) {
@@ -149,6 +157,40 @@ extension MainViewController {
 //                vc.url
 //                = newsArray[0].articles?[selectedIndexPath.row].url ?? ""
 //            }
+        }
+    }
+    
+}
+
+
+
+//MARK: - Log out
+extension MainViewController {
+
+    @objc func logoutTapped() {
+        UserDefaults.standard.removeObject(forKey: "loggedInEmail")
+        let alert = UIAlertController(
+            title: "Logging out",
+            message: "Are you sure you want to log out?",
+            preferredStyle: .alert
+        )
+        let okAct = UIAlertAction(title: "Yep!", style: .default) { _ in
+            self.navigateToFront()
+        }
+        let cancelAct = UIAlertAction(title: "Nah", style: .cancel, handler: nil)
+        alert.addAction(okAct)
+        alert.addAction(cancelAct)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func navigateToFront() {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = scene.windows.first else { return }
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavController") as? UINavigationController {
+            window.rootViewController = authVC
+            window.makeKeyAndVisible()
         }
     }
     
