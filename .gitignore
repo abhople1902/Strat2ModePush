@@ -1,1 +1,109 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# =========================
+# Xcode
+# =========================
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Xcode workspace user data
+*.xcworkspace/xcuserdata/
+
+# Swift Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# =========================
+# Swift Package Manager
+# =========================
+.build/
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/
+
+# Keep Package.resolved for apps (recommended)
+# Comment out the next line if you want to commit it
+# !Package.resolved
+
+# =========================
+# CocoaPods
+# =========================
+Pods/
+Podfile.lock
+# If building an app, you may want to KEEP Podfile.lock
+# Remove the above line if so
+
+# =========================
+# Carthage
+# =========================
+Carthage/Build/
+
+# Keep Cartfile.resolved
+# !Cartfile.resolved
+
+# =========================
+# Fastlane
+# =========================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# =========================
+# Archives
+# =========================
+*.xcarchive
+
+# =========================
+# IDEs
+# =========================
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+
+
+
 GoogleService-Info.plist

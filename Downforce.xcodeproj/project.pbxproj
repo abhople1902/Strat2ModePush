@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC82378E2F4EC79F00711F68 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC82378D2F4EC79F00711F68 /* WidgetKit.framework */; };
+		DC8237902F4EC79F00711F68 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC82378F2F4EC79F00711F68 /* SwiftUI.framework */; };
+		DC82379B2F4EC7A100711F68 /* newsGlimpseWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DC82378C2F4EC79F00711F68 /* newsGlimpseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DC8F36102DC0A82A00BA20C2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DC8F360F2DC0A82A00BA20C2 /* FirebaseAnalytics */; };
 		DC9AE6652DC142BC0029000C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC9AE6642DC142BC0029000C /* FirebaseAuth */; };
 		DC9AE6672DC142BC0029000C /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DC9AE6662DC142BC0029000C /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DC8237992F4EC7A100711F68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCA6594F2D86FA2A00EACACF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC82378B2F4EC79F00711F68;
+			remoteInfo = newsGlimpseWidgetExtension;
+		};
 		DCA659712D86FA2C00EACACF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCA6594F2D86FA2A00EACACF /* Project object */;
@@ -29,13 +39,46 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DC82379C2F4EC7A100711F68 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DC82379B2F4EC7A100711F68 /* newsGlimpseWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DC82378C2F4EC79F00711F68 /* newsGlimpseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = newsGlimpseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC82378D2F4EC79F00711F68 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DC82378F2F4EC79F00711F68 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DC8237A42F4ED62500711F68 /* newsGlimpseWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newsGlimpseWidgetExtension.entitlements; sourceTree = "<group>"; };
 		DCA659572D86FA2A00EACACF /* Downforce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Downforce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA659702D86FA2C00EACACF /* DownforceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownforceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA6597A2D86FA2C00EACACF /* DownforceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownforceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DC8237A02F4EC7A100711F68 /* Exceptions for "newsGlimpseWidget" folder in "newsGlimpseWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DC82378B2F4EC79F00711F68 /* newsGlimpseWidgetExtension */;
+		};
+		DC8237A22F4ED2D200711F68 /* Exceptions for "Downforce" folder in "newsGlimpseWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model/MainNewsModel.swift,
+				ViewModel/NewsServiceWidget.swift,
+			);
+			target = DC82378B2F4EC79F00711F68 /* newsGlimpseWidgetExtension */;
+		};
 		DCA659822D86FA2C00EACACF /* Exceptions for "Downforce" folder in "Downforce" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -46,10 +89,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		DC8237912F4EC79F00711F68 /* newsGlimpseWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DC8237A02F4EC7A100711F68 /* Exceptions for "newsGlimpseWidget" folder in "newsGlimpseWidgetExtension" target */,
+			);
+			path = newsGlimpseWidget;
+			sourceTree = "<group>";
+		};
 		DCA659592D86FA2A00EACACF /* Downforce */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				DCA659822D86FA2C00EACACF /* Exceptions for "Downforce" folder in "Downforce" target */,
+				DC8237A22F4ED2D200711F68 /* Exceptions for "Downforce" folder in "newsGlimpseWidgetExtension" target */,
 			);
 			path = Downforce;
 			sourceTree = "<group>";
@@ -67,6 +119,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DC8237892F4EC79F00711F68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC8237902F4EC79F00711F68 /* SwiftUI.framework in Frameworks */,
+				DC82378E2F4EC79F00711F68 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCA659542D86FA2A00EACACF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +158,8 @@
 		DC9AE6632DC142BC0029000C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC82378D2F4EC79F00711F68 /* WidgetKit.framework */,
+				DC82378F2F4EC79F00711F68 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,9 +167,11 @@
 		DCA6594E2D86FA2A00EACACF = {
 			isa = PBXGroup;
 			children = (
+				DC8237A42F4ED62500711F68 /* newsGlimpseWidgetExtension.entitlements */,
 				DCA659592D86FA2A00EACACF /* Downforce */,
 				DCA659732D86FA2C00EACACF /* DownforceTests */,
 				DCA6597D2D86FA2C00EACACF /* DownforceUITests */,
+				DC8237912F4EC79F00711F68 /* newsGlimpseWidget */,
 				DC9AE6632DC142BC0029000C /* Frameworks */,
 				DCA659582D86FA2A00EACACF /* Products */,
 			);
@@ -118,6 +183,7 @@
 				DCA659572D86FA2A00EACACF /* Downforce.app */,
 				DCA659702D86FA2C00EACACF /* DownforceTests.xctest */,
 				DCA6597A2D86FA2C00EACACF /* DownforceUITests.xctest */,
+				DC82378C2F4EC79F00711F68 /* newsGlimpseWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +191,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DC82378B2F4EC79F00711F68 /* newsGlimpseWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC82379F2F4EC7A100711F68 /* Build configuration list for PBXNativeTarget "newsGlimpseWidgetExtension" */;
+			buildPhases = (
+				DC8237882F4EC79F00711F68 /* Sources */,
+				DC8237892F4EC79F00711F68 /* Frameworks */,
+				DC82378A2F4EC79F00711F68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DC8237912F4EC79F00711F68 /* newsGlimpseWidget */,
+			);
+			name = newsGlimpseWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = newsGlimpseWidgetExtension;
+			productReference = DC82378C2F4EC79F00711F68 /* newsGlimpseWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DCA659562D86FA2A00EACACF /* Downforce */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCA659832D86FA2C00EACACF /* Build configuration list for PBXNativeTarget "Downforce" */;
@@ -132,10 +220,12 @@
 				DCA659532D86FA2A00EACACF /* Sources */,
 				DCA659542D86FA2A00EACACF /* Frameworks */,
 				DCA659552D86FA2A00EACACF /* Resources */,
+				DC82379C2F4EC7A100711F68 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DC82379A2F4EC7A100711F68 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DCA659592D86FA2A00EACACF /* Downforce */,
@@ -203,9 +293,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
+					DC82378B2F4EC79F00711F68 = {
+						CreatedOnToolsVersion = 26.3;
+					};
 					DCA659562D86FA2A00EACACF = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -239,11 +332,19 @@
 				DCA659562D86FA2A00EACACF /* Downforce */,
 				DCA6596F2D86FA2C00EACACF /* DownforceTests */,
 				DCA659792D86FA2C00EACACF /* DownforceUITests */,
+				DC82378B2F4EC79F00711F68 /* newsGlimpseWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DC82378A2F4EC79F00711F68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCA659552D86FA2A00EACACF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +369,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DC8237882F4EC79F00711F68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCA659532D86FA2A00EACACF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +400,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DC82379A2F4EC7A100711F68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC82378B2F4EC79F00711F68 /* newsGlimpseWidgetExtension */;
+			targetProxy = DC8237992F4EC7A100711F68 /* PBXContainerItemProxy */;
+		};
 		DCA659722D86FA2C00EACACF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCA659562D86FA2A00EACACF /* Downforce */;
@@ -305,15 +418,77 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DC82379D2F4EC7A100711F68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = newsGlimpseWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = newsGlimpseWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = newsGlimpseWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AyushBhople.StratTwoModePush.newsGlimpseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC82379E2F4EC7A100711F68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = newsGlimpseWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = newsGlimpseWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = newsGlimpseWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AyushBhople.StratTwoModePush.newsGlimpseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DCA659842D86FA2C00EACACF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Downforce/Downforce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Downforce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Strat Two";
@@ -345,9 +520,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Downforce/Downforce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Downforce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Strat Two";
@@ -408,6 +583,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -431,6 +607,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -471,6 +648,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -487,6 +665,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -498,7 +677,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -521,7 +699,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -543,7 +720,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AyushBhople.DownforceUITests;
@@ -564,7 +740,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G4C3VCJCU3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AyushBhople.DownforceUITests;
@@ -583,6 +758,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DC82379F2F4EC7A100711F68 /* Build configuration list for PBXNativeTarget "newsGlimpseWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC82379D2F4EC7A100711F68 /* Debug */,
+				DC82379E2F4EC7A100711F68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DCA659522D86FA2A00EACACF /* Build configuration list for PBXProject "Downforce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
