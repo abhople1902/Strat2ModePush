@@ -32,24 +32,29 @@ class IntroViewController: UIViewController {
     }
     
     func navigateToNextScreen() {
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = scene.windows.first else { return }
-        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavController") as? UINavigationController {
-            window.rootViewController = authVC
-            window.makeKeyAndVisible()
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "SegmentViewController") as? SegmentViewController {
+            setRootViewController(authVC)
         }
     }
     
     private func navigateToHomeDirectly() {
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = scene.windows.first else { return }
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeNavController") as? UINavigationController {
-            window.rootViewController = authVC
-            window.makeKeyAndVisible()
+            setRootViewController(authVC)
         }
+    }
+
+    private func setRootViewController(_ controller: UIViewController) {
+        guard
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let window = view.window ?? windowScene.windows.first(where: { $0.isKeyWindow }) ?? windowScene.windows.first
+        else {
+            return
+        }
+
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
     }
 
 }

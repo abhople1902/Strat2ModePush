@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import SwiftUI
 import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    private var backgroundHost: UIHostingController<SigninView>?
     
     private let titlelabel: UILabel = {
         let label = UILabel()
@@ -56,10 +59,32 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let hosting = UIHostingController(rootView: SigninView())
+        backgroundHost = hosting
+        
+        addChild(hosting)
+        hosting.view.frame = view.bounds
+        hosting.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(hosting.view)
+        
+        NSLayoutConstraint.activate([
+            hosting.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hosting.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hosting.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hosting.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        hosting.didMove(toParent: self)
+        view.sendSubviewToBack(hosting.view)
+        
+        
+        
         view.addSubview(titlelabel)
         view.addSubview(emailField)
         view.addSubview(passField)
         view.addSubview(loginButton)
+        view.backgroundColor = .clear
         
         setUpConstraints()
         loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
@@ -105,27 +130,27 @@ class LoginViewController: UIViewController {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            titlelabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titlelabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 195)
+            titlelabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            titlelabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
+            titlelabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 420)
         ])
         
         NSLayoutConstraint.activate([
-            emailField.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 41),
-            emailField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 58),
-            emailField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -59)
+            emailField.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 26),
+            emailField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            emailField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
         ])
         
         NSLayoutConstraint.activate([
-            passField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 39),
-            passField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 58),
-            passField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -59)
+            passField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 26),
+            passField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            passField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
         ])
         
         NSLayoutConstraint.activate([
-            loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -405),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140)
-//            loginButton.topAnchor.constraint(equalTo: passField.bottomAnchor, constant: 29)
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -240),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            loginButton.topAnchor.constraint(equalTo: passField.bottomAnchor, constant: 26)
         ])
         
         

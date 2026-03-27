@@ -188,7 +188,7 @@ extension MainViewController {
               let window = scene.windows.first else { return }
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavController") as? UINavigationController {
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "SegmentViewController") as? UINavigationController {
             window.rootViewController = authVC
             window.makeKeyAndVisible()
         }

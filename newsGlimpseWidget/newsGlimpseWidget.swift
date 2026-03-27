@@ -80,7 +80,7 @@ struct newsGlimpseWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemMedium:
-            var backImg = entry.backgroundImage ?? UIImage(named: "testImage")
+            let backImg = entry.backgroundImage ?? UIImage(named: "testImage")
             ZStack {
                 Group {
                     ContainerRelativeShape()
