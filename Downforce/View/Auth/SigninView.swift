@@ -10,28 +10,44 @@ import Foundation
 
 struct SigninView: View {
     
-    private let glowPosition = CGPoint(x: 275, y: 215)
-    private let distortionPosition = CGPoint(x: 400, y: 400)
-    private let distortionSize = CGSize(width: 730, height: 420)
+//    private let glowPosition = CGPoint(x: 275, y: 215)
+//    private let distortionPosition = CGPoint(x: 400, y: 400)
+    private let distortionSize = CGSize(width: 730, height: 320)
         
     var body: some View {
-        ZStack {
-            Image("3")
-                .resizable()
-                .scaledToFill()
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height
+        GeometryReader { geo in
+            ZStack {
+                Image("3")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        width: UIScreen.main.bounds.width,
+                        height: UIScreen.main.bounds.height
+                    )
+                    .ignoresSafeArea()
+                
+                HeatDistortionView(imageName: "3")
+                    .frame(width: distortionSize.width, height: distortionSize.height)
+                    .position(
+                        x: geo.size.width * 0.75,
+                        y: geo.size.height * 0.65
+                    )
+                
+                GlowView()
+                    .frame(width: 160, height: 160)
+                    .position(
+                        x: geo.size.width * 0.67,
+                        y: geo.size.height * 0.23
+                    )
+                
+                LinearGradient(colors: [
+                    Color.black.opacity(1),
+                    Color.black.opacity(0.6),
+                    Color.black.opacity(0.0)
+                ], startPoint: .bottomLeading, endPoint: .topTrailing
                 )
                 .ignoresSafeArea()
-            
-            HeatDistortionView(imageName: "3")
-                .frame(width: distortionSize.width, height: distortionSize.height)
-                .position(distortionPosition)
-            
-            GlowView()
-                .frame(width: 160, height: 160)
-                .position(glowPosition)
+            }
         }
     }
     
@@ -65,7 +81,7 @@ struct GlowView: View {
 //                .scaleEffect(1.2)
         }
         .blendMode(.screen) // critical for realistic light blending
-        .opacity(flicker ? 0.75 : 0.5)
+        .opacity(flicker ? 0.9 : 0.3)
         .blur(radius: 8)
         .onAppear {
             withAnimation(

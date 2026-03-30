@@ -28,6 +28,8 @@ class SegmentViewController: UIViewController {
         setupLayout()
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        segmentedControl
+            .setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         segmentedControl.selectedSegmentTintColor = .systemBlue
         segmentedControl
             .setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)

@@ -95,31 +95,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerBack" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-S7-92T">
-                                <rect key="frame" x="0.0" y="-17" width="393" height="886"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register to Strat Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hB-WH-SfS">
-                                <rect key="frame" x="25" y="538" width="352" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hB-WH-SfS">
+                                <rect key="frame" x="40" y="150" width="337" height="47"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="38"/>
-                                <color key="textColor" red="0.8203125" green="0.3474121094" blue="0.3247070312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEJ-QX-QqH">
-                                <rect key="frame" x="40" y="611" width="273" height="34"/>
+                                <rect key="frame" x="40" y="223" width="273" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baA-SO-BMc">
-                                <rect key="frame" x="40" y="731" width="113" height="34.333333333333371"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Register" cornerStyle="small">
-                                    <color key="baseBackgroundColor" red="0.83102448449999999" green="0.35017988" blue="0.32982579829999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="40" y="343" width="113" height="35"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Register">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="0.52562554909521608" blue="0.33446232662261122" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="1" green="0.52562554910000003" blue="0.33446232660000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="registerButton:" destination="zjD-D2-haK" eventType="touchUpInside" id="5Sw-Mp-MEk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2I-0I-s6d">
-                                <rect key="frame" x="40" y="671" width="273" height="34"/>
+                                <rect key="frame" x="40" y="283" width="273" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -129,18 +137,14 @@
                         <constraints>
                             <constraint firstItem="LDv-U6-6Uq" firstAttribute="trailing" secondItem="8hB-WH-SfS" secondAttribute="trailing" constant="16" id="4hS-da-8zo"/>
                             <constraint firstItem="A2I-0I-s6d" firstAttribute="leading" secondItem="LDv-U6-6Uq" secondAttribute="leading" constant="40" id="6QK-uV-egr"/>
-                            <constraint firstItem="8hB-WH-SfS" firstAttribute="top" secondItem="LDv-U6-6Uq" secondAttribute="top" constant="420" id="Dcb-gm-7yZ"/>
-                            <constraint firstItem="8hB-WH-SfS" firstAttribute="leading" secondItem="LDv-U6-6Uq" secondAttribute="leading" constant="25" id="Fad-U8-Uiv"/>
-                            <constraint firstAttribute="bottom" secondItem="fcs-S7-92T" secondAttribute="bottom" constant="-17" id="FmW-b2-srr"/>
+                            <constraint firstItem="8hB-WH-SfS" firstAttribute="top" secondItem="uad-rP-X8K" secondAttribute="top" constant="150" id="Dcb-gm-7yZ"/>
+                            <constraint firstItem="8hB-WH-SfS" firstAttribute="leading" secondItem="LDv-U6-6Uq" secondAttribute="leading" constant="40" id="Fad-U8-Uiv"/>
                             <constraint firstItem="baA-SO-BMc" firstAttribute="top" secondItem="A2I-0I-s6d" secondAttribute="bottom" constant="26" id="HH1-YY-kIX"/>
                             <constraint firstItem="LDv-U6-6Uq" firstAttribute="trailing" secondItem="A2I-0I-s6d" secondAttribute="trailing" constant="80" id="Sa2-QH-Mjs"/>
                             <constraint firstItem="CEJ-QX-QqH" firstAttribute="top" secondItem="8hB-WH-SfS" secondAttribute="bottom" constant="26" id="Ucz-7G-Inb"/>
                             <constraint firstItem="LDv-U6-6Uq" firstAttribute="trailing" secondItem="CEJ-QX-QqH" secondAttribute="trailing" constant="80" id="XgP-nA-WNh"/>
                             <constraint firstItem="LDv-U6-6Uq" firstAttribute="trailing" secondItem="baA-SO-BMc" secondAttribute="trailing" constant="240" id="aG8-K8-LIe"/>
-                            <constraint firstItem="fcs-S7-92T" firstAttribute="trailing" secondItem="LDv-U6-6Uq" secondAttribute="trailing" id="aJr-Vs-yJ9"/>
-                            <constraint firstItem="fcs-S7-92T" firstAttribute="leading" secondItem="LDv-U6-6Uq" secondAttribute="leading" id="kmP-ee-hPa"/>
                             <constraint firstItem="CEJ-QX-QqH" firstAttribute="leading" secondItem="LDv-U6-6Uq" secondAttribute="leading" constant="40" id="mRJ-ma-x1q"/>
-                            <constraint firstItem="fcs-S7-92T" firstAttribute="top" secondItem="uad-rP-X8K" secondAttribute="top" constant="-17" id="mmB-cg-UUk"/>
                             <constraint firstItem="A2I-0I-s6d" firstAttribute="top" secondItem="CEJ-QX-QqH" secondAttribute="bottom" constant="26" id="s7O-DW-ln6"/>
                             <constraint firstItem="baA-SO-BMc" firstAttribute="leading" secondItem="LDv-U6-6Uq" secondAttribute="leading" constant="40" id="wSR-Bc-D3P"/>
                         </constraints>
@@ -224,7 +228,6 @@
     </scenes>
     <resources>
         <image name="IntroImage" width="341.33334350585938" height="341.33334350585938"/>
-        <image name="registerBack" width="162.66667175292969" height="248.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
