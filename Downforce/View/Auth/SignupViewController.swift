@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import Firebase
 import FirebaseAuth
 
@@ -15,8 +16,33 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var mailInputOutlet: UITextField!
     @IBOutlet weak var passwordInputOutlet: UITextField!
     
+    private lazy var dismissKeyboardTapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        gesture.cancelsTouchesInView = false
+        return gesture
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let hosting = UIHostingController(rootView: SignupView())
+        
+        addChild(hosting)
+        hosting.view.frame = view.bounds
+        hosting.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(hosting.view)
+        NSLayoutConstraint.activate([
+            hosting.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hosting.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hosting.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hosting.view.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
+        hosting.didMove(toParent: self)
+        view.sendSubviewToBack(hosting.view)
+        
+        view.backgroundColor = .clear
+        view.addGestureRecognizer(dismissKeyboardTapGesture)
 
     }
     
@@ -32,9 +58,14 @@ class SignupViewController: UIViewController {
         }
     }
     
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     
     
     @IBAction func registerButton(_ sender: UIButton) {
+        dismissKeyboard()
         if let emailEntered = mailInputOutlet.text, let passEntered = passwordInputOutlet.text {
             Auth.auth().createUser(withEmail: emailEntered, password: passEntered) { [weak self] authResult, error in
                 

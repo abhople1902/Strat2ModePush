@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainViewController: UIViewController {
 
@@ -168,13 +169,18 @@ extension MainViewController {
 extension MainViewController {
 
     @objc func logoutTapped() {
-        UserDefaults.standard.removeObject(forKey: "loggedInEmail")
         let alert = UIAlertController(
             title: "Logging out",
             message: "Are you sure you want to log out?",
             preferredStyle: .alert
         )
         let okAct = UIAlertAction(title: "Yep!", style: .default) { _ in
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print("Failed to sign out: \(error.localizedDescription)")
+            }
+            UserDefaults.standard.removeObject(forKey: "loggedInEmail")
             self.navigateToFront()
         }
         let cancelAct = UIAlertAction(title: "Nah", style: .cancel, handler: nil)
@@ -184,11 +190,15 @@ extension MainViewController {
     }
     
     func navigateToFront() {
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = scene.windows.first else { return }
+        guard
+            let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let window = view.window ?? scene.windows.first(where: { $0.isKeyWindow }) ?? scene.windows.first
+        else {
+            return
+        }
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavController") as? UINavigationController {
+        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "SegmentViewController") as? SegmentViewController {
             window.rootViewController = authVC
             window.makeKeyAndVisible()
         }
