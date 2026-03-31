@@ -425,7 +425,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = newsGlimpseWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = newsGlimpseWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = newsGlimpseWidget;
@@ -456,7 +456,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = newsGlimpseWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = newsGlimpseWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = newsGlimpseWidget;
@@ -488,7 +488,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Downforce/Downforce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Downforce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Strat Two";
@@ -522,7 +522,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Downforce/Downforce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Downforce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Strat Two";
