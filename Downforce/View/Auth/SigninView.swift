@@ -17,7 +17,7 @@ struct SigninView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image("3")
+                Image("spark")
                     .resizable()
                     .scaledToFill()
                     .frame(
@@ -26,25 +26,11 @@ struct SigninView: View {
                     )
                     .ignoresSafeArea()
                 
-                HeatDistortionView(imageName: "3")
-                    .frame(width: distortionSize.width, height: distortionSize.height)
-                    .position(
-                        x: geo.size.width * 0.75,
-                        y: geo.size.height * 0.65
-                    )
-                
-                GlowView()
-                    .frame(width: 160, height: 160)
-                    .position(
-                        x: geo.size.width * 0.67,
-                        y: geo.size.height * 0.23
-                    )
-                
                 LinearGradient(colors: [
                     Color.black.opacity(1),
                     Color.black.opacity(0.6),
                     Color.black.opacity(0.0)
-                ], startPoint: .bottomLeading, endPoint: .topTrailing
+                ], startPoint: .topLeading, endPoint: .bottomTrailing
                 )
                 .ignoresSafeArea()
             }
@@ -54,84 +40,84 @@ struct SigninView: View {
 }
 
 
-struct GlowView: View {
-    
-    @State private var flicker = false
-    
-    var body: some View {
-        ZStack {
-            
-            // Core Glow Gradient
-            RadialGradient(
-                gradient: Gradient(colors: [
-                    Color.white.opacity(0.7),
-                    Color.white.opacity(0.4),
-                    Color.white.opacity(0.1),
-                    Color.clear
-                ]),
-                center: .center,
-                startRadius: 3,
-                endRadius: 60
-            )
-            
-            // Outer Soft Glow
-//            Circle()
-//                .fill(Color.white.opacity(0.15))
-//                .blur(radius: 30)
-//                .scaleEffect(1.2)
-        }
-        .blendMode(.screen) // critical for realistic light blending
-        .opacity(flicker ? 0.9 : 0.3)
-        .blur(radius: 8)
-        .onAppear {
-            withAnimation(
-                .easeInOut(duration: 0.5)
-                .repeatForever(autoreverses: true)
-            ) {
-                flicker.toggle()
-            }
-        }
-    }
-}
+//struct GlowView: View {
+//    
+//    @State private var flicker = false
+//    
+//    var body: some View {
+//        ZStack {
+//            
+//            // Core Glow Gradient
+//            RadialGradient(
+//                gradient: Gradient(colors: [
+//                    Color.white.opacity(0.7),
+//                    Color.white.opacity(0.4),
+//                    Color.white.opacity(0.1),
+//                    Color.clear
+//                ]),
+//                center: .center,
+//                startRadius: 3,
+//                endRadius: 60
+//            )
+//            
+//            // Outer Soft Glow
+////            Circle()
+////                .fill(Color.white.opacity(0.15))
+////                .blur(radius: 30)
+////                .scaleEffect(1.2)
+//        }
+//        .blendMode(.screen) // critical for realistic light blending
+//        .opacity(flicker ? 0.9 : 0.3)
+//        .blur(radius: 8)
+//        .onAppear {
+//            withAnimation(
+//                .easeInOut(duration: 0.5)
+//                .repeatForever(autoreverses: true)
+//            ) {
+//                flicker.toggle()
+//            }
+//        }
+//    }
+//}
 
 
-struct HeatDistortionView: View {
-    let imageName: String
-    @State private var start = Date.now
-    
-    var body: some View {
-        GeometryReader { geo in
-            TimelineView(.animation) { t1 in
-                let elapsed = start.distance(to: t1.date)
-                
-//                Rectangle()
-//                    .fill(.blue)
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(
-                        width: UIScreen.main.bounds.width,
-                        height: UIScreen.main.bounds.height
-                    )
-                    .offset(
-                        x: -(geo.frame(in: .global).minX),
-                        y: -(geo.frame(in: .global).minY)
-                    )
-                    .visualEffect { content, proxy in
-                        content
-                            .distortionEffect(
-                                ShaderLibrary.heatDistortion(
-                                    .float(elapsed),
-                                    .float2(proxy.size)
-                                ),
-                                maxSampleOffset: CGSize(width: 20, height: 20)
-                            )
-                    }
-                    .clipped()
-            }
-        }
-    }
-}
+//struct HeatDistortionView: View {
+//    let imageName: String
+//    @State private var start = Date.now
+//    
+//    var body: some View {
+//        GeometryReader { geo in
+//            TimelineView(.animation) { t1 in
+//                let elapsed = start.distance(to: t1.date)
+//                
+////                Rectangle()
+////                    .fill(.blue)
+//                Image(imageName)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(
+//                        width: UIScreen.main.bounds.width,
+//                        height: UIScreen.main.bounds.height
+//                    )
+//                    .offset(
+//                        x: -(geo.frame(in: .global).minX),
+//                        y: -(geo.frame(in: .global).minY)
+//                    )
+//                    .visualEffect { content, proxy in
+//                        content
+//                            .distortionEffect(
+//                                ShaderLibrary.heatDistortion(
+//                                    .float(elapsed),
+//                                    .float2(proxy.size)
+//                                ),
+//                                maxSampleOffset: CGSize(width: 20, height: 20)
+//                            )
+//                    }
+//                    .clipped()
+//            }
+//        }
+//    }
+//}
 
 
 

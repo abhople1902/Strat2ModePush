@@ -26,13 +26,13 @@ using namespace metal;
     float2 uv = pos / size;
 
     // Focus distortion more in center vertically
-//    float verticalFalloff = smoothstep(0.0, 0.3, uv.y) * (1.0 - smoothstep(0.7, 1.0, uv.y));
+    float verticalFalloff = smoothstep(0.0, 0.3, uv.y) * (1.0 - smoothstep(0.7, 1.0, uv.y));
     
     // Stronger near exhaust (bottom area usually)
     float horizontalFalloff = smoothstep(0.2, 0.8, uv.x);
 
-//    float strength = verticalFalloff * horizontalFalloff;
-    float strength = horizontalFalloff;
+    float strength = verticalFalloff * horizontalFalloff;
+//    float strength = horizontalFalloff;
 
     // Multi-frequency shimmer (important)
     float wave1 = sin(pos.y * 0.08 + time * 6.0);

@@ -16,45 +16,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IntroImage" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-6S-R6n">
-                                <rect key="frame" x="0.0" y="-11" width="393" height="880"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strat Two Sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA5-2J-3mo" userLabel="Strat Two Label">
-                                <rect key="frame" x="0.0" y="452" width="393" height="8"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT2-Or-eCw">
+                                <rect key="frame" x="25" y="281" width="241" height="134.33333333333337"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134.33000000000001" id="Uc6-GV-OdI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="110"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think sports, think strat two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yv-sz-55l">
-                                <rect key="frame" x="0.0" y="468" width="393" height="32"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT6-Cd-XJc">
+                                <rect key="frame" x="190" y="209" width="187" height="245"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="245" id="llq-kW-yt8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="284"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your motorsport news........" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2k-Pm-L4o">
+                                <rect key="frame" x="82" y="597" width="225" height="17"/>
+                                <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...Strategically simplified" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-Nr-1Pw">
+                                <rect key="frame" x="48" y="629" width="258" height="17"/>
+                                <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Im6-by-ghM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KLu-6S-R6n" firstAttribute="trailing" secondItem="Im6-by-ghM" secondAttribute="trailing" id="BNz-vJ-4Te"/>
-                            <constraint firstItem="cA5-2J-3mo" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" id="Bqg-AG-vAx"/>
-                            <constraint firstItem="Im6-by-ghM" firstAttribute="bottom" secondItem="0Yv-sz-55l" secondAttribute="bottom" constant="284" id="Ly0-Om-Dnf"/>
-                            <constraint firstAttribute="bottom" secondItem="KLu-6S-R6n" secondAttribute="bottom" constant="-17" id="NKB-lE-JFf"/>
-                            <constraint firstItem="Im6-by-ghM" firstAttribute="bottom" secondItem="cA5-2J-3mo" secondAttribute="bottom" constant="324" id="Qb5-Br-rGh"/>
-                            <constraint firstItem="KLu-6S-R6n" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" id="S8B-s5-cbE"/>
-                            <constraint firstItem="cA5-2J-3mo" firstAttribute="top" secondItem="Im6-by-ghM" secondAttribute="top" constant="334" id="ZYQ-f0-PWl"/>
-                            <constraint firstItem="0Yv-sz-55l" firstAttribute="trailing" secondItem="Im6-by-ghM" secondAttribute="trailing" id="aVz-o6-jsG"/>
-                            <constraint firstItem="0Yv-sz-55l" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" id="heP-vW-bnz"/>
-                            <constraint firstItem="cA5-2J-3mo" firstAttribute="trailing" secondItem="Im6-by-ghM" secondAttribute="trailing" id="ibs-I1-89p"/>
-                            <constraint firstItem="KLu-6S-R6n" firstAttribute="top" secondItem="TrR-o5-Nvr" secondAttribute="top" constant="-11" id="q0I-Mg-c9S"/>
+                            <constraint firstItem="Im6-by-ghM" firstAttribute="trailing" secondItem="V2k-Pm-L4o" secondAttribute="trailing" constant="86" id="6Oh-j2-byc"/>
+                            <constraint firstItem="Im6-by-ghM" firstAttribute="trailing" secondItem="vT2-Or-eCw" secondAttribute="trailing" constant="127" id="AfV-JZ-RSn"/>
+                            <constraint firstItem="V2k-Pm-L4o" firstAttribute="top" secondItem="uT6-Cd-XJc" secondAttribute="bottom" constant="143" id="IUZ-rd-bdA"/>
+                            <constraint firstItem="vT2-Or-eCw" firstAttribute="top" secondItem="Im6-by-ghM" secondAttribute="top" constant="163" id="KEH-2v-fNe"/>
+                            <constraint firstItem="uT6-Cd-XJc" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" constant="190" id="McI-0H-sOV"/>
+                            <constraint firstItem="uT6-Cd-XJc" firstAttribute="top" secondItem="Im6-by-ghM" secondAttribute="top" constant="91" id="TB3-Yu-s6E"/>
+                            <constraint firstItem="Im6-by-ghM" firstAttribute="trailing" secondItem="Wfg-Nr-1Pw" secondAttribute="trailing" constant="87" id="ZcI-JT-X2V"/>
+                            <constraint firstItem="Wfg-Nr-1Pw" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" constant="48" id="gZr-h4-C1c"/>
+                            <constraint firstItem="Wfg-Nr-1Pw" firstAttribute="top" secondItem="V2k-Pm-L4o" secondAttribute="bottom" constant="15" id="i2t-vJ-P4V"/>
+                            <constraint firstItem="Im6-by-ghM" firstAttribute="trailing" secondItem="uT6-Cd-XJc" secondAttribute="trailing" constant="16" id="nKc-cH-uOD"/>
+                            <constraint firstItem="vT2-Or-eCw" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" constant="25" id="vw4-At-efo"/>
+                            <constraint firstItem="V2k-Pm-L4o" firstAttribute="leading" secondItem="Im6-by-ghM" secondAttribute="leading" constant="82" id="xEe-sS-vbe"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stratTwoNewsLabel" destination="cA5-2J-3mo" id="ETe-j3-0vc"/>
+                        <outlet property="capLabelOne" destination="V2k-Pm-L4o" id="M2q-K6-P7N"/>
+                        <outlet property="capLabelTwo" destination="Wfg-Nr-1Pw" id="oY2-vd-zwS"/>
+                        <outlet property="titleNameLabel" destination="vT2-Or-eCw" id="hdL-qS-gxc"/>
+                        <outlet property="titleNumberLabel" destination="uT6-Cd-XJc" id="wtI-jL-2Pq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzk-aW-Z48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="-208"/>
+            <point key="canvasLocation" x="-240.45801526717557" y="-208.45070422535213"/>
         </scene>
         <!--Segment View Controller-->
         <scene sceneID="cRA-qb-Iey">
@@ -227,7 +246,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IntroImage" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
