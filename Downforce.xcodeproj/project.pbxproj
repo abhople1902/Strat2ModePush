@@ -75,6 +75,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model/MainNewsModel.swift,
+				stratIcon.icon,
 				ViewModel/NewsServiceWidget.swift,
 			);
 			target = DC82378B2F4EC79F00711F68 /* newsGlimpseWidgetExtension */;
@@ -483,12 +484,12 @@
 		DCA659842D86FA2C00EACACF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = stratIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Downforce/Downforce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Downforce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Strat Two";
@@ -517,12 +518,12 @@
 		DCA659852D86FA2C00EACACF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = stratIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Downforce/Downforce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Downforce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Strat Two";
