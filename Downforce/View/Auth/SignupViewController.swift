@@ -49,11 +49,12 @@ class SignupViewController: UIViewController {
     
     func navigateToNextScreenOnLogin() {
         guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = scene.windows.first else { return }
+              let window = view.window ?? scene.windows.first(where: {
+                  $0.isKeyWindow }) ?? scene.windows.first else { return }
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeNavController") as? UINavigationController {
-            window.rootViewController = authVC
+        if let homeTabBarVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeTabBarController") as? UITabBarController {
+            window.rootViewController = homeTabBarVC
             window.makeKeyAndVisible()
         }
     }

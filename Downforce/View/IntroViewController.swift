@@ -81,8 +81,8 @@ class IntroViewController: UIViewController {
 
     private func navigateToHomeDirectly() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let authVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeNavController") as? UINavigationController {
-            setRootViewController(authVC)
+        if let homeTabBarVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeTabBarController") as? UITabBarController {
+            setRootViewController(homeTabBarVC)
         }
     }
 
